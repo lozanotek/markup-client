@@ -1,3 +1,4 @@
+const messageUrl = "https://sync.dotnetconf.net/messages"
 const messageConnection = new signalR.HubConnectionBuilder()
     .withUrl("https://markupsync.signalr.app/message",
     {
@@ -23,3 +24,19 @@ function reconnect() {
         setTimeout(start(), 5000);
     }
 };
+
+$.getJSON(messageUrl, function (data) {
+    if (data === null) {
+        return;
+    }
+
+    setMessage(data);
+});
+
+function setMessage(playerMessage) {
+    $("#message").html(playerMessage.content);
+};
+
+messageConnection.on("syncMessage", function(sync) {
+    setMessage(sync);
+});
