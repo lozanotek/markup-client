@@ -1,4 +1,5 @@
-const messageUrl = "https://sync.dotnetconf.net/messages"
+const messageUrl = "https://markupsync.signalr.app/messages"
+
 const messageConnection = new signalR.HubConnectionBuilder()
     .withUrl("https://markupsync.signalr.app/message",
     {
