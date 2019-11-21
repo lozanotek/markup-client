@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <title>Markup Sync Client</title>
+    <style type="text/css">
+        .embed-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+            .embed-container iframe, .embed-container object, .embed-container embed {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        #playerContainer {
+            width: 90%;
+            margin: 0 auto;
+        }
+        #playerMessage {
+            width: 100%;
+            margin: 0 auto;
+        }
+    </style>
+
+    <script type="text/javascript" 
+    src="https://cdn.jsdelivr.net/npm/@aspnet/signalr@1.1.0/dist/browser/signalr.min.js"></script>
+    <script src="~/js/message-hub.js"></script>
+</head>
+<body >
+    <div class="container wrapper-body-text center-container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box-text">
+                    <p class="text" style="text-align: center" id="playerMessage" name="playerMessage"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
